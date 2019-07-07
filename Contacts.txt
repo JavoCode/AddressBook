@@ -1,0 +1,3 @@
+1:Javo:Ellis:MALE:javo:19981103:jj@mail.com:8765684050:KingSt;KingSt2;Kingston;JA
+2:Junior:New:MALE:jj:19911103:kk@mail.com:1020684050:kkk;jjj;zzzz;JA
+3:James:Hondu:FEMALE:jamie:19921104:jamie@mail.com:7961234567:SS2;JJJ2;Kington;JA

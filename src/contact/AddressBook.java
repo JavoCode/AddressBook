@@ -45,7 +45,7 @@ public class AddressBook {
 	 */
 	public void NewContact(String firstName,String lastName,String gender,String dob,String alias, String Address, char type, Long number,String email) throws IOException {
 		
-		try {
+		
 		Gender gen = Gender.valueOf(gender);
 		Long dobb = Long.parseLong(dob);
 		Contact contact2 = new Contact(firstName,lastName,gen,dobb);
@@ -58,11 +58,6 @@ public class AddressBook {
 		contact2.addPhone(type, number);
 		
 		 dataB.addNewContact(contact2);
-		
-		}catch(NumberFormatException n) {
-			//n.printStackTrace();
-			System.out.println("ERROR");
-		}
 	}
 	
 	

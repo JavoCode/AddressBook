@@ -35,6 +35,12 @@ public class TextUI {
 		Long dob = (long) 0;
 		Long number = (long)0;
 		Character type = (Character) null;
+		String Dob = " ";
+		String num = " ";
+		String typeNum = " ";
+		String editPhone = " ";
+		String newLastName = " ";
+		String delNumber = " ";
 		
 		
 		do {
@@ -59,6 +65,8 @@ public class TextUI {
 		
 		
 			do {
+				
+				
 			
 					
 		System.out.println("------------- 1 - Add New Contact------------------");
@@ -109,18 +117,31 @@ public class TextUI {
 			System.out.println("Enter the 4th and final line of your address");
 			address+= scan.nextLine();
 			
-			
+			try {
 			System.out.println("Date of birth: ");
-			String Dob = scan.nextLine();
-			 dob = Long.parseLong(Dob);
+			  Dob = scan.nextLine();
+				 dob = Long.parseLong(Dob);
+
+			} catch(NumberFormatException e) {
+				  System.out.println("Incorrect Input");
+			  }
 			 
+			try {
 			 System.out.println("Add Phone number");
-			 String num = scan.nextLine();
+			  num = scan.nextLine();
 			 number = Long.parseLong(num);
+			}catch(NumberFormatException e) {
+				System.out.println("Incorrect Input");
+			}
 			 
+			try {
 			 System.out.println("Enter M for Mobile, W for work, H for Home");
-			 String typeNum = scan.nextLine();
+			 typeNum = scan.nextLine();
 			 type = typeNum.charAt(0);
+			}catch(Exception e) {
+				System.out.println("Incorrect Input");
+				e.printStackTrace();
+			}
 			
 			 
 			 System.out.println("Enter an email");
@@ -192,7 +213,7 @@ public class TextUI {
 				switch(choiceL) {
 				case "A" : 
 					System.out.println("Last Name: ");
-					String newLastName = scan.nextLine();
+					newLastName = scan.nextLine();
 					ABook.updateLastName(newLastName, entryNo1);
 					
 					break;
@@ -203,8 +224,12 @@ public class TextUI {
 					
 					break;
 				case "C" : 
+					try {
 					System.out.println("Enter Phone number");
-					String editPhone = scan.nextLine();
+					 editPhone = scan.nextLine();
+					}catch(NumberFormatException e) {
+						e.printStackTrace();
+					}
 					System.out.println("Enter number type");
 					String typeEdit = scan.nextLine();
 					Long numNew = Long.parseLong(editPhone);
@@ -213,9 +238,14 @@ public class TextUI {
 					break;
 					
 				case "D" : 
+					try {
 					System.out.println("Enter number you wish to delete");
-					String delNumber = scan.nextLine();
+					delNumber = scan.nextLine();
+					}catch(NumberFormatException e) {
+						e.printStackTrace();
+					}
 					Long delnumD = Long.parseLong(delNumber);
+					
 					
 					ABook.deleteContactPhone(delnumD, entryNo1);
 					break;

@@ -63,8 +63,9 @@ public long getNumber() {
 */
 public String toString() {
 
-//	System.out.println(getType()+getAreaCode()+Long.toString(getNumber()).substring(3,6)+Long.toString(getNumber()).substring(6));
+System.out.println(getType()+getAreaCode()+Long.toString(getNumber()).substring(3,6)+Long.toString(getNumber()).substring(6));
  return  getType()+getAreaCode()+Long.toString(getNumber()).substring(3,6)+Long.toString(getNumber()).substring(6);
+//return Long.toString(getNumber());
  		
 		 }
 }

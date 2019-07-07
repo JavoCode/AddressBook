@@ -347,8 +347,10 @@ public class DatabaseManager {
 			               
 			               for(String phonenumbers : Phonelist) {
 			            	   contact.addPhone(phonenumbers.charAt(0), Long.parseLong(phonenumbers.substring(1)));
-//			            	   System.out.println(phonenumbers.charAt(0));
-//			            	   System.out.println(Long.parseLong(phonenumbers.substring(1)));
+			            	   System.out.println(phonenumbers.charAt(0));
+			            	   System.out.println(Long.parseLong(phonenumbers.substring(1)));
+			            	   System.out.println(dataString);
+			            	   
 			               }
 			               
 			               contact.setAddress(tokens[8]);
