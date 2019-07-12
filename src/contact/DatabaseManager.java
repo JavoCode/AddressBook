@@ -141,7 +141,7 @@ public class DatabaseManager {
 		String strGUI = "";
 			for (Contact el: data) {
 				if (el.getEntryNo() == entryNo) {
-					strSearch = setArrayInfo(el.getEntryNo(), el.getFirstName(), el.getLastName(), el.getGender(), el.getAlias(), el.getDOB(), el.getEmailList(), el.getPhoneList(), el.getAddress());
+					strSearch = setArrayInfo(el.getEntryNo(), el.getFirstName(), el.getLastName(), el.getGender(), el.getAlias(), el.getDOB(), el.getEmailList(),el.getType(), el.getPhone(), el.getAddress());
 					strGUI = setGuiArrayInfo(el.getEntryNo(), el.getFirstName(), el.getLastName(), el.getGender(),el.getEmailList());
 				}
 			}
@@ -156,7 +156,7 @@ public class DatabaseManager {
 		for (Contact el: data) {
 			for (String em : el.getEmailList()) {
 				if(em.contentEquals(email))
-				System.out.println(setArrayInfo(el.getEntryNo(), el.getFirstName(), el.getLastName(), el.getGender(), el.getAlias(), el.getDOB(), el.getEmailList(), el.getPhoneList(), el.getAddress()));
+				System.out.println(setArrayInfo(el.getEntryNo(), el.getFirstName(), el.getLastName(), el.getGender(), el.getAlias(), el.getDOB(), el.getEmailList(), el.getType(),el.getPhone(), el.getAddress()));
 			}
 		}
 	}
@@ -205,7 +205,7 @@ public class DatabaseManager {
 			System.out.println("No data to display");
 		}else {
 			for(Contact el : data) {
-				strn += setArrayInfo(el.getEntryNo(), el.getFirstName(), el.getLastName(), el.getGender(), el.getAlias(), el.getDOB(), el.getEmailList(), el.getPhoneList(), el.getAddress());
+				strn += setArrayInfo(el.getEntryNo(), el.getFirstName(), el.getLastName(), el.getGender(), el.getAlias(), el.getDOB(), el.getEmailList(),el.getType(), el.getPhone(), el.getAddress());
 				strn+="\n";
 			}
 			}
@@ -239,7 +239,7 @@ public class DatabaseManager {
 		try {
 				PrintWriter pw = new PrintWriter(new FileWriter("Contacts.txt",false));
 				for(Contact el: data) {
-					updateArrayInfo(el.getEntryNo(), el.getFirstName(), el.getLastName(), el.getGender(), el.getAlias(), el.getDOB(), el.getEmailList(), el.getPhoneList(), el.getAddress());
+					updateArrayInfo(el.getEntryNo(), el.getFirstName(), el.getLastName(), el.getGender(), el.getAlias(), el.getDOB(), el.getEmailList(),el.getType(),el.getPhone(), el.getAddress());
 				
 		}
 		for(String ele : dataString) {
@@ -269,9 +269,9 @@ public class DatabaseManager {
 		 * @param Phonelist
 		 * @param addressList
 		 */
-		public void updateArrayInfo(int entryNo,String firstname,String lastName,Gender gender, String alias, Long dob,String[]emailList,String []Phonelist,String[]addressList) {
+		public void updateArrayInfo(int entryNo,String firstname,String lastName,Gender gender, String alias, Long dob,String[]emailList,String type,String phone,String[]addressList) {
 			
-			this.str = entryNo + ":"+firstname+":"+lastName+":"+gender.toString()+":"+alias+":"+dob+":"+String.join(",", emailList)+":"+ String.join(",",Phonelist)+":"+String.join(";", addressList);
+			this.str = entryNo + ":"+firstname+":"+lastName+":"+gender.toString()+":"+alias+":"+dob+":"+String.join(",", emailList)+":"+ type+ phone+":"+String.join(";", addressList);
 			//System.out.println(Arrays.toString(addressList));
 			
 	
@@ -289,14 +289,15 @@ public class DatabaseManager {
 		 * @param alias
 		 * @param dob
 		 * @param emailList
+		 * @param string 
 		 * @param Phonelist
 		 * @param addressList
 		 * @return
 		 */
-		public String setArrayInfo(int entryNo,String firstname,String lastName,Gender gender, String alias, Long dob,String[]emailList,String []Phonelist,String[]addressList) {
+		public String setArrayInfo(int entryNo,String firstname,String lastName,Gender gender, String alias, Long dob,String[]emailList,String phone,String type, String[]addressList) {
 			
 			
-			this.str = entryNo + ":"+firstname+":"+lastName+":"+gender.toString()+":"+alias+":"+dob+":"+String.join(",", emailList)+":"+ String.join(",",Phonelist)+":"+String.join(";", addressList);
+			this.str = entryNo + ":"+firstname+":"+lastName+":"+gender.toString()+":"+alias+":"+dob+":"+String.join(",", emailList)+":"+ type+phone+":"+String.join(";", addressList);
 			 return str;
 		}
 		

@@ -270,6 +270,12 @@ public String[] getPhoneList() {
  return PrintPhone;
 }
 
+public String getPhone() {
+	
+	return String.valueOf(phone.getNumber()) ;
+	
+}
+
 public String toString() {
 	return  firstName + " " + lastName + " " + alias + " "+ getEmailList()+" "+ getPhoneList();
 }
@@ -280,6 +286,12 @@ public int compareTo(Object other) {
 	Integer entryNum2 = ((Contact)other).getEntryNo();
 	// TODO Auto-generated method stub
 	return entryNum1.compareTo(entryNum2);
+}
+
+public String getType() {
+
+	String c = Character.toString(phone.getType());
+	return c;
 }
 
 
