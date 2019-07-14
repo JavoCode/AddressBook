@@ -102,14 +102,14 @@ public class GUILogin extends JFrame{
                 	}
                 }
               
-                if (countdown==0){
+                if (countdown==1){
                     label.setText("SORRY, LOCKED OUT OF SYSTEM!");
                     enter.setEnabled(false);
                 }
                 
                 else if(check == false){
                 	countdown--;
-                    if(countdown==1){
+                    if(countdown==2){
                         label.setText("Please note: You have " + countdown + " try left before being locked out of the system.");
                     }
                     else{   

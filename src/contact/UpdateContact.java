@@ -57,7 +57,7 @@ public class UpdateContact extends JFrame{
             countrytext = new JTextField(10);
 
 			addresspanel = new JPanel();
-            addresspanel.setLayout(new GridLayout(3, 1));
+            addresspanel.setLayout(new GridLayout(4, 1));
             addresspanel.setBorder(BorderFactory.createTitledBorder("Address"));
             addresspanel.add(town);
             addresspanel.add(towntext);

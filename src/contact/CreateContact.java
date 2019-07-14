@@ -28,7 +28,7 @@ public class CreateContact extends JFrame{
     northpanel.setBackground(Color.YELLOW);
     mainpanel.add(northpanel, BorderLayout.NORTH);
     mainpanel.setLayout(new FlowLayout());
-    mainpanel.setPreferredSize (new Dimension(400, 300));
+    mainpanel.setPreferredSize (new Dimension(400, 360));
     mainpanel.setBackground (Color.YELLOW);
 
     panel1 = new JPanel(new GridLayout(8, 1, 1, 6));
@@ -136,7 +136,7 @@ public class CreateContact extends JFrame{
     
     countrytext = new JTextField(10);
 
-    addresspanel.setLayout(new GridLayout(3,1));
+    addresspanel.setLayout(new GridLayout(4,1));
     addresspanel.setBorder(BorderFactory.createTitledBorder("Address"));
     addresspanel.add(town);
     addresspanel.add(towntext);
@@ -209,12 +209,7 @@ public class CreateContact extends JFrame{
 	}
     	
        if (event.getSource() == save){
-    	  
-    	 	
-    	  
-        	
-          //add the info to the table..save the info to the text ui, dispose(); (so itll close page)..
-    	   
+          //add the info to the table..save the info to the text ui, dispose(); (so itll close page)...
     	   Dm.write();
        }
        if (event.getSource()== cancel){
@@ -231,11 +226,11 @@ public class CreateContact extends JFrame{
     }
   }
 
-  public static void main (String[] args){
-	  DatabaseManager Dm = new DatabaseManager();
-	  AddressBook Ab = new AddressBook(Dm);
-    CreateContact cc = new CreateContact(Ab, Dm);
-}
+	  public static void main (String[] args){
+		  DatabaseManager Dm = new DatabaseManager();
+		  AddressBook Ab = new AddressBook(Dm);
+	    CreateContact cc = new CreateContact(Ab, Dm);
+	}
 }
 
             
